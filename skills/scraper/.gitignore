@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Secretos y entorno
+.env
+.env.*
+!.env.example
+
+# Salidas del scraper (no versionar datos)
+*.jsonl
+
+# Logs y temporales
+*.log
+.Rhistory
+.DS_Store

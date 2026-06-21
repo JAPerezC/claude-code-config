@@ -1,0 +1,44 @@
+# .pre-commit-config.yaml — Hooks recomendados para proyectos Python/Data Science
+# Setup: pip install pre-commit && pre-commit install
+# Test manual: pre-commit run --all-files
+
+repos:
+  # Utilidades generales (whitespace, EOF, archivos grandes, etc.)
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-added-large-files
+        args: ["--maxkb=1000"]
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+
+  # Ruff: linting + formateo (reemplaza black, isort, flake8, pyupgrade)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+      - id: ruff-format
+
+  # Detección de secrets en commits
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.2
+    hooks:
+      - id: gitleaks
+
+  # Limpia outputs de notebooks Jupyter antes de commit (evita diffs ruidosos)
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1
+    hooks:
+      - id: nbstripout
+
+# Configuración por hook (opcional)
+default_language_version:
+  python: python3.12

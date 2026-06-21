@@ -1,0 +1,13 @@
+# Dependencias de la skill `scraper`. Instalar SIEMPRE en un venv:
+#   python -m venv .venv && source .venv/Scripts/activate   (Windows / Git Bash)
+#   pip install -r requirements.txt
+# Para reproducibilidad, generar lockfile:  uv pip compile requirements.txt -o requirements.lock
+# Paquetes verificados como legítimos, populares y mantenidos (jun 2026).
+
+requests>=2.32          # HTTP + sesión con retry/backoff
+urllib3>=2.2            # Retry adapter (viene con requests)
+beautifulsoup4>=4.12    # parseo HTML para modo soup
+lxml>=5.2               # parser rápido usado por BeautifulSoup
+trafilatura>=2.0        # extracción de artículo + metadatos (modo article)
+lxml_html_clean>=0.4    # requerido por trafilatura 2.x con lxml 5+/6+ (se separó de lxml)
+python-dotenv>=1.0      # cargar SCRAPERAPI_KEY desde .env (opcional)

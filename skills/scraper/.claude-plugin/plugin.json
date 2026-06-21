@@ -1,0 +1,11 @@
+{
+  "name": "scraper",
+  "version": "1.3.0",
+  "description": "Web scraping ético y robusto con Python (requests, BeautifulSoup, trafilatura, ScraperAPI): retry con backoff, respeto de robots.txt, descubrimiento por sitemap, identificación del tipo de contenido (HTML/PDF/JSON), guardado incremental, reanudación, inspección de páginas (--inspect) y detección de endpoints de API (--detect-api). Modos article (texto limpio + metadatos) y soup (selector CSS).",
+  "author": {
+    "name": "Jorge"
+  },
+  "homepage": "https://github.com/JAPerezC/claude-scraper-skill",
+  "keywords": ["scraping", "web", "data", "trafilatura", "beautifulsoup", "requests", "python"],
+  "license": "MIT"
+}

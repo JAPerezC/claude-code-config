@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Pre-commit: bloquea commits con secretos o archivos privados.
+# Activar una vez:  git config core.hooksPath .githooks
+root="$(git rev-parse --show-toplevel)"
+python "$root/scripts/scan-secrets.py" || {
+  echo "Commit abortado por scan-secrets.py"
+  exit 1
+}

@@ -1,0 +1,50 @@
+# ===== Secretos / credenciales (NUNCA subir) =====
+.credentials.json
+*credentials*
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+*.secret
+.secrets/
+
+# ===== Historial / transcripts / datos privados =====
+history.jsonl
+history.jsonl.bak
+command-log.txt
+projects/
+projects-archive/
+archive/
+sessions/
+session-env/
+tasks/
+plans/
+shell-snapshots/
+paste-cache/
+file-history/
+backups/
+cache/
+downloads/
+ide/
+daemon/
+daemon.log
+jobs/
+debug/
+plugins/
+teams/
+mcp-needs-auth-cache.json
+.last-*
+
+# ===== Memoria: solo se comparte el índice =====
+memory/*
+!memory/MEMORY.md
+
+# ===== Caches =====
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.log
+.DS_Store

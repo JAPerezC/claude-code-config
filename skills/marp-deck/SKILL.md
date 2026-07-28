@@ -1,6 +1,6 @@
 ---
 name: marp-deck
-description: Crear presentaciones desde Markdown con Marp. Genera HTML, PDF y PPTX. Triggers en "crear presentación", "hacer slides", "generar deck".
+description: Crear presentaciones rápidas desde Markdown con Marp cuando se necesita PDF o PPTX como entregable. Triggers en "deck en PDF", "presentación en PowerPoint", "slides con Marp". Para presentaciones HTML animadas o con marca institucional CCD/Tec usar slides-html en su lugar.
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---
 

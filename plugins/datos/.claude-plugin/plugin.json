@@ -1,0 +1,17 @@
+{
+  "name": "datos",
+  "version": "1.0.0",
+  "description": "Análisis de datos con Python: EDA, pandas, estadística, SQL/DuckDB y visión por computadora, más subagentes para validar datasets, ejecutar pipelines y correr tests.",
+  "author": {
+    "name": "JAPerezC",
+    "url": "https://github.com/JAPerezC"
+  },
+  "license": "MIT",
+  "keywords": [
+    "datos",
+    "pandas",
+    "estadistica",
+    "sql",
+    "duckdb"
+  ]
+}

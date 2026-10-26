@@ -1,0 +1,16 @@
+{
+  "name": "sesion",
+  "version": "1.0.0",
+  "description": "Continuidad entre sesiones: /session-start (briefing de contexto) y /handoff (snapshot, PROGRESS.md y resumen de sesión).",
+  "author": {
+    "name": "JAPerezC",
+    "url": "https://github.com/JAPerezC"
+  },
+  "license": "MIT",
+  "keywords": [
+    "sesion",
+    "handoff",
+    "contexto",
+    "context-rot"
+  ]
+}

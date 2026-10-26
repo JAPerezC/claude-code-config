@@ -11,10 +11,11 @@ id_rsa*
 .secrets/
 
 # ===== Historial / transcripts / datos privados =====
+# (el repo ya no es copia de ~/.claude, pero se mantienen por si se copia algo por error)
 history.jsonl
 history.jsonl.bak
 command-log.txt
-projects/
+/projects/
 projects-archive/
 archive/
 sessions/
@@ -32,7 +33,6 @@ daemon/
 daemon.log
 jobs/
 debug/
-plugins/
 teams/
 mcp-needs-auth-cache.json
 .last-*

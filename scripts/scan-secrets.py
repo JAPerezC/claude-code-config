@@ -67,7 +67,9 @@ def _is_placeholder(value: str) -> bool:
 def is_forbidden(path: Path) -> bool:
     """Archivos/rutas que NUNCA deben commitearse (privados/credenciales)."""
     n = path.name
-    s = str(path).replace("\\", "/")
+    # git devuelve rutas relativas ("projects/x"); se antepone "/" para que
+    # los directorios en la raíz del repo también coincidan con "/projects/".
+    s = "/" + str(path).replace("\\", "/").removeprefix("./")
     if n == ".env.example":
         return False
     if n == ".credentials.json" or n in (
@@ -89,10 +91,22 @@ def is_forbidden(path: Path) -> bool:
         "/file-history/",
         "/paste-cache/",
         "/backups/",
+        "/session-env/",
+        "/todos/",
     ):
         if d in s:
             return True
     return False
+
+
+def staged_text(path: Path) -> str | None:
+    """Contenido en staging (lo que realmente se va a commitear)."""
+    out = subprocess.run(
+        ["git", "show", f":{path.as_posix()}"], capture_output=True
+    )
+    if out.returncode != 0:
+        return None
+    return out.stdout.decode("utf-8", errors="ignore")
 
 
 def files_to_check(args: list[str]) -> list[Path]:
@@ -114,18 +128,24 @@ def files_to_check(args: list[str]) -> list[Path]:
 
 
 def main() -> int:
+    staged = not sys.argv[1:]
     files = files_to_check(sys.argv[1:])
     hits = []
     for f in files:
         if is_forbidden(f):
             hits.append((str(f), "ARCHIVO PRIVADO PROHIBIDO", ""))
             continue
-        if not f.is_file():
-            continue
-        try:
-            text = f.read_text(encoding="utf-8", errors="ignore")
-        except OSError:
-            continue
+        if staged:
+            text = staged_text(f)
+            if text is None:
+                continue
+        else:
+            if not f.is_file():
+                continue
+            try:
+                text = f.read_text(encoding="utf-8", errors="ignore")
+            except OSError:
+                continue
         for name, pat in PATTERNS:
             for m in pat.finditer(text):
                 if _is_placeholder(m.group(0)):

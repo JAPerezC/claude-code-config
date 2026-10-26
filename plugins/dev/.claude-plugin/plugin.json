@@ -1,0 +1,17 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "Flujo de desarrollo: /git-pr, /init-proyecto con plantillas, mcp-builder y un subagente revisor de código.",
+  "author": {
+    "name": "JAPerezC",
+    "url": "https://github.com/JAPerezC"
+  },
+  "license": "MIT",
+  "keywords": [
+    "git",
+    "pr",
+    "plantillas",
+    "mcp",
+    "code-review"
+  ]
+}

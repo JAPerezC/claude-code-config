@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Tests de hooks y escáner de secretos
+        run: uv run --with pytest pytest -q tests
+      - name: Tests del plugin scraper
+        run: uv run --with pytest --with-requirements plugins/scraper/skills/scraper/requirements.txt pytest -q plugins/scraper/tests
+      - name: Escáner de secretos sobre el repo
+        run: python3 scripts/scan-secrets.py plugins dotfiles scripts skills-archive
+      - name: JSON válidos
+        run: |
+          for f in .claude-plugin/marketplace.json plugins/*/.claude-plugin/plugin.json dotfiles/settings.template.json; do
+            jq empty "$f"
+          done

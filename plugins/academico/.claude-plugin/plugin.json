@@ -1,0 +1,17 @@
+{
+  "name": "academico",
+  "version": "1.0.0",
+  "description": "Documentos académicos: Pandoc/APA, citas y BibTeX, co-escritura de documentación, decks Marp y un subagente investigador con fuentes.",
+  "author": {
+    "name": "JAPerezC",
+    "url": "https://github.com/JAPerezC"
+  },
+  "license": "MIT",
+  "keywords": [
+    "academico",
+    "apa",
+    "bibtex",
+    "pandoc",
+    "marp"
+  ]
+}

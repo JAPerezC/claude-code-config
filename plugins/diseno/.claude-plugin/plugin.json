@@ -1,0 +1,16 @@
+{
+  "name": "diseno",
+  "version": "1.0.0",
+  "description": "Diseño web y presentaciones no genéricas: estudio-web (tokens, validadores de paleta y lint anti-slop), slides-html (decks HTML animados), canvas-design y theme-factory.",
+  "author": {
+    "name": "JAPerezC",
+    "url": "https://github.com/JAPerezC"
+  },
+  "license": "MIT",
+  "keywords": [
+    "diseno",
+    "web",
+    "slides",
+    "anti-slop"
+  ]
+}

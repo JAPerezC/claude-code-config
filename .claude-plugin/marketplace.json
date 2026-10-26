@@ -1,0 +1,42 @@
+{
+  "name": "jorge-skills",
+  "owner": {
+    "name": "JAPerezC",
+    "url": "https://github.com/JAPerezC"
+  },
+  "metadata": {
+    "description": "Configuración de Claude Code de JAPerezC: plugins temáticos de sesión, datos, académico, diseño, desarrollo y scraping."
+  },
+  "plugins": [
+    {
+      "name": "sesion",
+      "source": "./plugins/sesion",
+      "description": "Continuidad entre sesiones: /session-start (briefing de contexto) y /handoff (snapshot, PROGRESS.md y resumen de sesión)."
+    },
+    {
+      "name": "datos",
+      "source": "./plugins/datos",
+      "description": "Análisis de datos con Python: EDA, pandas, estadística, SQL/DuckDB y visión por computadora, más subagentes para validar datasets, ejecutar pipelines y correr tests."
+    },
+    {
+      "name": "academico",
+      "source": "./plugins/academico",
+      "description": "Documentos académicos: Pandoc/APA, citas y BibTeX, co-escritura de documentación, decks Marp y un subagente investigador con fuentes."
+    },
+    {
+      "name": "diseno",
+      "source": "./plugins/diseno",
+      "description": "Diseño web y presentaciones no genéricas: estudio-web (tokens, validadores de paleta y lint anti-slop), slides-html (decks HTML animados), canvas-design y theme-factory."
+    },
+    {
+      "name": "dev",
+      "source": "./plugins/dev",
+      "description": "Flujo de desarrollo: /git-pr, /init-proyecto con plantillas, mcp-builder y un subagente revisor de código."
+    },
+    {
+      "name": "scraper",
+      "source": "./plugins/scraper",
+      "description": "Web scraping ético y robusto con Python (requests, BeautifulSoup, trafilatura, ScraperAPI): retry con backoff, respeto de robots.txt, descubrimiento por sitemap, identificación del tipo de contenido (HTML/PDF/JSON), guardado incremental, reanudación, inspección de páginas (--inspect) y detección de endpoints de API (--detect-api). Modos article (texto limpio + metadatos) y soup (selector CSS)."
+    }
+  ]
+}
